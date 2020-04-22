@@ -72,25 +72,24 @@ public:
 				num_of_max = s;
 			}
 		}
-		cout << endl << "Номер максимального элемента: " << num_of_max;
+		cout << endl << "Max Item Number: " << num_of_max;
 	}
 
 	~Array()
 	{
-		cout << endl << "---Деструкция выполнена успешно---";
+		cout << endl << "---Destruction completed successfully---";
 	}
 };
 
 int main()
 {	
 	srand(time(NULL));
-	setlocale(LC_ALL, "Russian");
 
 	int size, num;
 
 	while (1)
 	{
-		cout << "Введите размер массива: ";
+		cout << "Enter the size of the array: ";
 		cin >> size;
 		if (size < 16 && size > 0)
 		{
@@ -98,14 +97,14 @@ int main()
 		}
 		else
 		{
-			cout << "Ошибка, за пределами ограничения..";
+			cout << "Error Out of Limit...";
 		}
 	}
 	system("cls");
 
 	while (1)
 	{
-		cout << "Введите число: ";
+		cout << "Insert the number: ";
 		cin >> num;
 		if (num < 100 && num > -100)
 		{
@@ -113,24 +112,24 @@ int main()
 		}
 		else
 		{
-			cout << "Ошибка, за пределами ограничения...";
+			cout << "Error, Out of Limit...";
 		}
 	}
 	system("cls");
 
 	Array A(size, num);
 	A.made_array(A.Arr1);
-	cout << "1-й массив: ";
+	cout << "1st array: ";
 	A.show_array(A.Arr1);
 
 	Array B(size, num);
 	B.made_array(B.Arr2);
-	cout << endl << "2-й массив: ";
+	cout << endl << "2nd array: ";
 	B.show_array(B.Arr2);
 	
 	Array C(size, num);
 	C.trans_array(A.Arr1, B.Arr2);
-	cout << endl << "3-й массив: ";
+	cout << endl << "3rd array: ";
 	C.show_array(C.Arr3);
 	cout << endl;
 	C.finding_max_num(C.Arr3);
